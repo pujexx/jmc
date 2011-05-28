@@ -478,37 +478,34 @@ input.button {
     margin: 3px;
 }
 
-.pagination a 
-{
-    padding: 2px 5px 2px 5px;
-    margin: 2px;
-    border: 1px solid #AAAADD;
-    text-decoration: none; /* no underline */
-    color: #000099;
+
+div.pagination a {
+padding: 2px 5px 2px 5px;
+margin-right: 2px;
+border: 1px solid #52bfea;
+text-decoration: none; 
+color: #52bfea;
+}
+div.pagination a:hover, div.pagination a:active {
+border:1px solid #52bfea;
+color: #fff;
+background-color: #52bfea;
+}
+div.pagination span.current {
+padding: 2px 5px 2px 5px;
+margin-right: 2px;
+border: 1px solid #52bfea;
+font-weight: bold;
+background-color: #52bfea;
+color: #FFF;
+}
+div.pagination span.disabled {
+padding: 2px 5px 2px 5px;
+margin-right: 2px;
+border: 1px solid #f3f3f3;
+color: #ccc;
 }
 
-.pagination a:hover, .pagination a:active 
-{
-    border: 1px solid #000099;
-    color: #000;
-}
-
-.pagination span.current 
-{
-    padding: 2px 5px 2px 5px;
-    margin: 2px;
-    border: 1px solid #000099;
-    font-weight: bold;
-    background-color: #993300;
-    color: #FFF;
-}
-.pagination span.disabled 
-{
-    padding: 2px 5px 2px 5px;
-    margin: 2px;
-    border: 1px solid #EEE;
-    color: #DDD;
-} 
 #floatMenu {
     position:absolute;
     top:150px;
