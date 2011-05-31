@@ -1,101 +1,76 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Login Admin</title>
-        <link rel="stylesheet" href="<?php echo base_url(); ?>/template/admin/css/screen.css" type="text/css" media="screen" title="default" />
-        <!--  jquery core -->
-        <script src="<?php echo base_url(); ?>/template/admin/js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IN ADMIN PANEL | Powered by INDEZINER</title>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>template/admin/css/style.css" />
 
-        <!-- Custom jquery scripts -->
-        <script src="<?php echo base_url(); ?>/template/admin/js/jquery/custom_jquery.js" type="text/javascript"></script>
 
-        <!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
-        <script src="<?php echo base_url(); ?>/template/admin/js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $(document).pngFix( );
-            });
-        </script>
-    </head>
-    <body id="login-bg"> 
+<script type="text/javascript" src="<?php echo base_url();?>template/admin/js/jconfirmaction.jquery.js"></script>
+<script type="text/javascript">
 
-        <!-- Start: login-holder -->
-        <div id="login-holder">
+	$(document).ready(function() {
+		$('.ask').jConfirmAction();
+	});
 
-            <!-- start logo -->
-            <div id="notif">
+</script>
 
-            </div>
-            <div id="logo-login">
-                <p>sip</p>
-            </div>
-            <!-- end logo -->
+<script language="javascript" type="text/javascript" src="<?php echo base_url();?>template/admin/js/niceforms.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>template/admin/css/niceforms-default.css" />
 
-            <div class="clear"></div>
-            <div id="notiflogin">
-                <?php
-                echo form_error('username') . form_error('password');
-                ?>
-            <?php echo $this->session->flashdata('login_notif');?>
-            </div>
-            <!--  start loginbox ................................................................................. -->
-            <div id="loginbox">
+</head>
+<body>
+<div id="main_container">
 
-                <!--  start login-inner -->
+	<div class="header_login">
+    <div class="logo"><a href="#"><img src="<?php echo base_url();?>template/admin/images/logo.gif" alt="" title="" border="0" /></a></div>
 
-                <?php echo form_open('administrator/index'); ?>
+    </div>
 
-                <div id="login-inner">
-                    <table border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <th>Username</th>
-                            <td><input type="text"  name="username" class="login-inp" /></td>
-                        </tr>
-                        <tr>
-                            <th>Password</th>
-                            <td><input type="password"  name="password" onfocus="this.value=''" class="login-inp" /></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td valign="top"><input type="checkbox" class="checkbox-size" id="login-check" /><label for="login-check">Remember me</label></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td><input type="submit" class="submit-login"  /></td>
-                        </tr>
-                    </table>
-                </div>
-                <?php echo form_close(); ?>
-                <!--  end login-inner -->
-                <div class="clear"></div>
-                <a href="" class="forgot-pwd">Forgot Password?</a>
-            </div>
-            <!--  end loginbox -->
 
-            <!--  start forgotbox ................................................................................... -->
-            <div id="forgotbox">
-                <div id="forgotbox-text">Please send us your email and we'll reset your password.</div>
-                <!--  start forgot-inner -->
-                <div id="forgot-inner">
-                    <table border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <th>Email address:</th>
-                            <td><input type="text" value=""   class="login-inp" /></td>
-                        </tr>
-                        <tr>
-                            <th> </th>
-                            <td><input type="button" class="submit-login"  /></td>
-                        </tr>
-                    </table>
-                </div>
-                <!--  end forgot-inner -->
-                <div class="clear"></div>
-                <a href="" class="back-login">Back to login</a>
-            </div>
-            <!--  end forgotbox -->
+         <div class="login_form">
 
-        </div>
-        <!-- End: login-holder -->
-    </body>
+         <h3>Admin Panel Login</h3>
+
+         <a href="#" class="forgot_pass">Forgot password</a>
+
+         <form action="" method="post" class="niceform">
+
+                <fieldset>
+                    <dl>
+                        <dt><label for="email">Username:</label></dt>
+                        <dd><input type="text" name="" id="" size="54" /></dd>
+                    </dl>
+                    <dl>
+                        <dt><label for="password">Password:</label></dt>
+                        <dd><input type="password" name="" id="" size="54" /></dd>
+                    </dl>
+
+                    <dl>
+                        <dt><label></label></dt>
+                        <dd>
+                    <input type="checkbox" name="interests[]" id="" value="" /><label class="check_label">Remember me</label>
+                        </dd>
+                    </dl>
+
+                     <dl class="submit">
+                    <input type="submit" name="submit" id="submit" value="Enter" />
+                     </dl>
+
+                </fieldset>
+
+         </form>
+         </div>
+
+
+
+    <div class="footer_login">
+
+    	<div class="left_footer_login">IN ADMIN PANEL | Powered by <a href="http://indeziner.com">INDEZINER</a></div>
+    	<div class="right_footer_login"><a href="http://indeziner.com"><img src="images/indeziner_logo.gif" alt="" title="" border="0" /></a></div>
+
+    </div>
+
+</div>
+</body>
 </html>
