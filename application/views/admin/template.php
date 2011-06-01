@@ -42,9 +42,9 @@ $(function($) {
 });
 </script>
 
-<!--<script language="javascript" type="text/javascript" src="<?php echo base_url();?>template/admin/js/niceforms.js"></script>
+<script language="javascript" type="text/javascript" src="<?php echo base_url();?>template/admin/js/niceforms.js"></script>
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>template/admin/css/niceforms-default.css" />
--->
+
 </head>
 <body>
 <div id="main_container">
