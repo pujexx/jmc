@@ -7,6 +7,7 @@ class Order extends CI_Controller {
     }
 
     function index() {
+         $this->log->setLog('visitor visited order page',0);
         $config = array(
             array(
                 'field' => 'nama',

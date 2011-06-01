@@ -9,13 +9,7 @@
     <body>
         <div id="main_container">
 
-            <div class="header">
-                <div class="logo"><a href="#"><img src="<?php echo base_url(); ?>template/admin/images/logo.gif" alt="" title="" border="0" /></a></div>
-
-                <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="#" class="logout">Logout</a></div>
-                <div class="jclock"></div>
-            </div>
-
+            <?php $this->load->view('admin/header'); ?>
             <?php $this->load->view('admin/top_menu'); ?>
 
 
@@ -26,13 +20,7 @@
 
                 <div class="left_content">
 
-                    <div class="sidebar_search">
-                        <form>
-                            <input type="text" name="" class="search_input" value="search keyword" onclick="this.value=''" />
-                            <input type="image" class="search_submit" src="<?php echo base_url(); ?>template/admin/images/search.png" />
-                        </form>
-                    </div>
-
+                    <?php $this->load->view('admin/search'); ?>
                     <?php $this->load->view('admin/sidebar'); ?>
 
                     <?php $this->load->view('admin/sidebar_content'); ?>

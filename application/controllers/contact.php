@@ -8,6 +8,7 @@ class contact extends CI_Controller {
     }
 
     function index() {
+         $this->log->setLog('visitor visited contact page',0);
         $this->load->library('GMap'); //-> memanggil library gmap
 
         $this->gmap->GoogleMapAPI();

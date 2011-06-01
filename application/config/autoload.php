@@ -53,7 +53,7 @@ $autoload['packages'] = array(APPPATH.'third_party');
 */
 
 
-$autoload['libraries'] = array('database','session','form_validation','javascript','table','user_agent','pagination','parser');
+$autoload['libraries'] = array('database','session','form_validation','javascript','table','user_agent','pagination','parser','log');
 
 
 

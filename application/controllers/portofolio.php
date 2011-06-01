@@ -8,7 +8,7 @@ class portofolio extends CI_Controller {
     }
 
     function index() {
-
+        $this->log->setLog('visitor visited portofolio page', 0);
         $config = array(
             'base_url' => site_url() . '/portofolio/index/',
             'total_rows' => $this->db->count_all('portofolio'),

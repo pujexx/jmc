@@ -8,7 +8,7 @@ class client extends CI_Controller {
     }
 
     function index() {
-
+        $this->log->setLog('visitor visited client page', 0);
         $config = array(
             'base_url' => site_url() . '/client/index/',
             'total_rows' => $this->db->count_all('client'),
