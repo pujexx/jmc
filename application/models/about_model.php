@@ -21,7 +21,7 @@ class About_model extends CI_Model {
          $query = $this->db->get('about');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $result[$row['idabout']]=array('title'=>$row['title_about'],'content'=>$row['content_about']);
+                $result[$row['idabout']]=array('id'=>$row['idabout'],'title'=>$row['title_about'],'content'=>$row['content_about']);
             }
             return $result;
         } else {
@@ -47,10 +47,10 @@ class About_model extends CI_Model {
         $this->db->insert('about', $data);
     }
 
-    function update($id) {
+    function update($id,$input) {
         $data = array(
-            'title_about' => $this->input->post('title_about', TRUE),
-            'content_about' => $this->input->post('content_about', TRUE),
+            'title_about' => $input['title_about'],
+            'content_about' => $input['content_about'],
         );
         $this->db->where('idabout', $id);
         $this->db->update('about', $data);
