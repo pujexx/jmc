@@ -21,17 +21,16 @@ class Welcome extends CI_Controller {
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
     public function index() {
-       
-        $this->load->library('ckeditor');
-        $this->load->library('ckFinder');
-        //configure base path of ckeditor folder 
-        $this->ckeditor->basePath = base_url() . 'asset/ckeditor/';
-        $this->ckeditor->config['toolbar'] = 'Full';
-        $this->ckeditor->config['language'] = 'en';
-        //configure ckfinder with ckeditor config 
-        $this->ckfinder->SetupCKEditor($this->ckeditor, 'asset/ckfinder');
 
-       $this->load->view('welcome_message');
+
+
+        $this->load->library('ck');
+
+        $this->ck->setck();
+        $this->load->view('welcome_message');
+    }
+    function terima(){
+        print_r($_POST);
     }
 
 }
