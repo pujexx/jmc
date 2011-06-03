@@ -54,19 +54,19 @@ ddaccordion.init({
          <div class="login_form">
 
          <h3>Admin Panel Login</h3>
-
+<?php echo "<br>".form_error('username')."<br>". form_error('password');?>
          <a href="#" class="forgot_pass">Forgot password</a>
 
-         <form action="" method="post" class="niceform">
+         <form action="<?php echo site_url('login/index')?>" method="post" class="niceform">
 
                 <fieldset>
                     <dl>
                         <dt><label for="email">Username:</label></dt>
-                        <dd><input type="text" name="" id="" size="54" /></dd>
+                        <dd><input type="text" name="username" id="" size="54" /></dd>
                     </dl>
                     <dl>
                         <dt><label for="password">Password:</label></dt>
-                        <dd><input type="password" name="" id="" size="54" /></dd>
+                        <dd><input type="password" name="password" id="" size="54" /></dd>
                     </dl>
 
                     <dl>
