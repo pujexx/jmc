@@ -33,7 +33,7 @@ class Client extends CI_Controller {
         $config['max_size'] = '100';
         $config['max_width'] = '1024';
         $config['max_height'] = '768';
-
+        $config['encrypt_name']=TRUE;
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload()) {
@@ -42,7 +42,18 @@ class Client extends CI_Controller {
             $this->load->view('upload_form', $data);
         } else {
             $data = array('upload_data' => $this->upload->data());
-              $data['content'] = "admin/newclient";
+            //echo "<pre>";
+            //  echo img("/client/".$data['upload_data']['file_name']);
+            // print_r($data['upload_data']);
+            //  echo "</pre>";
+
+            $config['image_library'] = 'gd2';
+            $config['source_image'] = "/client/".$data['upload_data']['file_name'];
+            $config['create_thumb'] = TRUE;
+            $config['maintain_ratio'] = TRUE;
+            $config['width'] = 200;
+            $config['height'] = 100;
+            $data['content'] = "admin/newclient";
             $this->load->view('admin/clientsucces', $data);
         }
     }
