@@ -1,3 +1,12 @@
+<?php 
+    if($this->session->flashdata('notif')!=''){
+  ?> 
+<div class="valid_box">
+  <?php 
+    echo $this->session->flashdata('notif');
+  ?> 
+</div>
+<?php }?>
 <h2>Client</h2>
 
 
@@ -30,7 +39,7 @@
         ?>" /></td>
 
                 <td><a href="#"><img src="<?php echo base_url(); ?>template/admin/images/user_edit.png" alt="" title="" border="0" /></a></td>
-                <td><a href="#" class="ask"><img src="<?php echo base_url(); ?>template/admin/images/trash.png" alt="" title="" border="0" /></a></td>
+                <td><a href="<?php echo site_url('admin/client/delete/'.$client['id_client']);?>" class="ask"><img src="<?php echo base_url(); ?>template/admin/images/trash.png" alt="" title="" border="0" /></a></td>
             </tr>
 
 <?php } ?>
@@ -38,7 +47,7 @@
     </tbody>
 </table>
 
-<a href="#" class="bt_green"><span class="bt_green_lft"></span><strong>Add new item</strong><span class="bt_green_r"></span></a>
+<a href="<?php echo site_url('admin/client/newclient');?>" class="bt_green"><span class="bt_green_lft"></span><strong>Tambah Client</strong><span class="bt_green_r"></span></a>
 <a href="#" class="bt_blue"><span class="bt_blue_lft"></span><strong>View all items from category</strong><span class="bt_blue_r"></span></a>
 <a href="#" class="bt_red"><span class="bt_red_lft"></span><strong>Delete items</strong><span class="bt_red_r"></span></a>
 

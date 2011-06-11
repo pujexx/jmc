@@ -7,8 +7,9 @@ class Client_model extends CI_Model {
     }
 
     function get_all($limit, $uri) {
-
+        $this->db->order_by('id_client', 'desc');
         $result = $this->db->get('client', $limit, $uri);
+
         if ($result->num_rows() > 0) {
             return $result->result_array();
         } else {
@@ -26,28 +27,16 @@ class Client_model extends CI_Model {
         }
     }
 
-    function insert() {
-           $data = array(
-        
-            'name_client' => $this->input->post('name_client', TRUE),
-           
-            'content_client' => $this->input->post('content_client', TRUE),
-           
-            'client_tumbh' => $this->input->post('client_tumbh', TRUE),
-           
-        );
+    function insert($data) {
+
         $this->db->insert('client', $data);
     }
 
     function update($id) {
         $data = array(
-         
-       'name_client' => $this->input->post('name_client', TRUE),
-       
-       'content_client' => $this->input->post('content_client', TRUE),
-       
-       'client_tumbh' => $this->input->post('client_tumbh', TRUE),
-       
+            'name_client' => $this->input->post('name_client', TRUE),
+            'content_client' => $this->input->post('content_client', TRUE),
+            'client_tumbh' => $this->input->post('client_tumbh', TRUE),
         );
         $this->db->where('id_client', $id);
         $this->db->update('client', $data);
@@ -60,5 +49,11 @@ class Client_model extends CI_Model {
         }
     }
 
+    function delete_one($id) {
+        $this->db->where('id_client', $sip);
+        $this->db->delete('client');
+    }
+
 }
+
 ?>
